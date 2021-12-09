@@ -241,3 +241,188 @@ footer{
     cursor: pointer;
 }
 
+
+
+/* -------------------- media query-------------------------------*/
+
+@media screen and (max-width: 450px) {
+    /* --------------------navbar section -------------------------------*/
+
+.navbar{
+    padding: 3%;
+    color: #ecf0f1;
+    font-size: 40px;
+    font-weight: bolder;
+    background-color: #e74c3c;
+}
+.topnav {
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+.topnav a.icon {
+  display: block;
+  right: 0;
+  top: 0;
+}
+
+.topnav a{
+    display: block;
+    line-height: 2;
+}
+#myLinks {
+    font-size: 20px;
+    font-family: 'Kanit', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: #ecf0f1;
+}
+.first{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+}
+.second{
+    display: none;
+}
+
+/* --------------------first section -------------------------------*/
+
+.header{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    font-size: 2rem;
+    background-color: #e74c3c;
+}
+.logo{
+    color:#ecf0f1;
+}
+.logo > h1{
+    font-family: 'Bebas Neue', cursive;
+}
+.logo > h6{
+    font-family: 'Kanit', sans-serif;
+}
+
+.gif >img{
+  width: 100%;
+  height: auto;
+}
+/* --------------------second section -------------------------------*/
+.container{
+    text-align: center;
+    background-color: #f1f2f6;
+    padding: 2%;
+}
+#title, #inputTitle, #usermail{
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 1.5rem;
+    width: 100%;
+    border: none;
+    margin-bottom: 10px;
+}
+#inputTitle{
+    padding: 10px;
+    border-bottom: solid #e74c3c;
+    width: 90%;
+}
+#text_area{
+    font-size: 1.5rem;
+    width:100%;
+    height: 400px;
+}
+button{
+    padding: 2.5%;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: #e17055;
+    cursor: pointer;
+}
+button > img{
+    width: 30px;
+    height: 30px;
+}
+button:hover{
+    transition: 1s;
+    background-color: #2ed573;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* --------------------third section -------------------------------*/
+.email_notes{
+    padding: 4%;
+    background-color: #e74c3c;
+    text-align: right;
+    font-size: 30px;
+}
+.email_notes>h2{
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
+.instruct{
+    color: white;
+    font-size: large;
+}
+
+
+/* --------------------my section -------------------------------*/
+
+#uttam{
+    background-color: #f1f2f6;
+    padding: 2%;
+}
+.madeby{
+    font-size: 4rem;
+    color: #e17055;
+    font-family: 'Bebas Neue', cursive;
+}
+span{
+    color: #e74c3c;
+}
+.image{
+    margin-left: 10px;
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+    border-radius: 5%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+    mix-blend-mode: luminosity;
+    cursor: pointer;
+}
+.image > img{
+    width : 100%;
+    height: 100%;
+    border-radius: 5%;
+} 
+.image:hover{
+    mix-blend-mode: normal;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.content{
+    margin-left: 10px;
+    text-align: left;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.rating_parent, #uttam>h2{
+    display: none;
+}
+/* --------------------footer section -------------------------------*/
+
+footer{
+    font-family: 'Quicksand', sans-serif;
+    padding: 5%;
+    background-color: #e74c3c;
+    color: #f1f2f6;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+}
