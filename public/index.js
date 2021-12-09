@@ -159,3 +159,16 @@ submitHandler(userData);
 })
 
 
+
+
+
+// for mobile view
+var x = document.getElementById("myLinks");
+x.style.display = "none";
+function myFunction() {
+if (x.style.display === "block") {
+  x.style.display = "none";
+} else {
+  x.style.display = "block";
+}
+}
