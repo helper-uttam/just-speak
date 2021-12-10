@@ -4,6 +4,7 @@ const resetBtn = document.getElementsByClassName('reset');
 const downloadBtn = document.getElementsByClassName('download');
 const saveBtn = document.getElementById('save');
 const sendBtn = document.getElementById('send')
+const stopBtn = document.getElementById('stop');
 
 const title = document.getElementById('title');
 const inputTitle = document.getElementById('inputTitle');
@@ -31,7 +32,7 @@ text_area.addEventListener('change',(e)=>{textValue.push(e.target.value);})
 let textValue = [];
 let stopIt = false;
 
-//----------------------------- for speach recognition -------------------------------\\
+//----------------------------- for speech recognition -------------------------------\\
   
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new window.SpeechRecognition();
@@ -57,6 +58,8 @@ recognition.addEventListener("end", () => {
     text_area.value = textValue.toString();
     recognition.start();
     setBody(textValue);
+  }else{
+    recognition.stop();
   }
 });
 }
@@ -134,9 +137,16 @@ sendBtn.disabled = false;
 /*-----------------------------------------------handling button clicks----------------------*/
 
 startBtn[0].addEventListener('click', ()=>{
+console.log("Started");
 stopIt = false;
 recognition.start();
 speechToText();
+});
+
+stopBtn.addEventListener('click', () => {
+  console.log("Stopped");
+  recognition.abort();
+  recognition.stop();
 });
 
 listenBtn[0].addEventListener('click', ()=>{
