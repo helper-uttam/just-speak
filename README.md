@@ -10,6 +10,7 @@
 - Docker, kuberneties
 - Datree
 - Firebase
+- Alan Voice assistant
 ```javascript    
 let x = "Hello World, ";
 console.log( x + "Welcome to this Devops project");
