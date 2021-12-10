@@ -23,4 +23,5 @@ jobs:
       - name: docker build nodeJS
         run: docker build -t just-speak:v1 .
       - name: pushing to dockerhub
-        run: docker tag just-speak:v1 codingnightmare/just-speak:v1
+        run: docker tag just-speak:v1 codingnightmare/just-speak:v1 |
+             docker push ${{ secrets.DOCKER_USER }}/just-speak:v1
