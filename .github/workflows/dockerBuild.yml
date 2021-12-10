@@ -22,3 +22,5 @@ jobs:
         run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: docker build nodeJS
         run: docker build -t just-speak:v1 .
+      - name: pushing to dockerhub
+        run: docker tag just-speak:v1 codingnightmare/just-speak:v1
