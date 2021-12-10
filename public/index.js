@@ -110,7 +110,7 @@ userData.bodyOfNotes = splitTitle.toString();
 doc.text(15, 20, splitTitle);
 
 if(notes.length >= 10){
-  doc.save('application.pdf');
+  doc.save('transcript.pdf');
 }else{
   alert("Please add few more words!");
 }
