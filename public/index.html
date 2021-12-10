@@ -59,12 +59,12 @@
             </div>
         </div> 
         <div class="audio_to_text">
-                <textarea id="text_area" rows="20" cols="60" placeholder="All text will go here when you'll speak"></textarea>
+                <textarea id="text_area" rows="30" cols="30" placeholder="All text will go here when you'll speak"></textarea>
             </div>
             <div class="items">
                 <button class="start"><img src="assets/speak.png"/></button>
                 <button id="stop"><img src="assets/stop.png"/></button>
-                <button class="listen"><img src="assets/listen.png"></button>
+                <button id = "lsn" class="listen"><img src="assets/listen.png"></button>
                 <button class="reset"><img src="assets/reset.png"></button>
                 <button id="dwn" class="download"><img src="assets/download.png"></button>
             </div>
@@ -141,12 +141,14 @@
     key: "4b16443e006c4ef7d5d2932f2d47ac062e956eca572e1d8b807a3e2338fdd0dc/stage",
     onCommand: function (commandData) {
       if (commandData.command === "download") {
-        console.log("ok");
         document.getElementById('dwn').click();
       }
       if(commandData.command === "send"){
         document.getElementById('save').click();
         document.getElementById('send').click();
+      }
+      if(commandData.command === "check"){
+        alanBtnInstance.playText("Click on Listen button");
       }
     },
     rootEl: document.getElementById("alan-btn"),

@@ -65,7 +65,6 @@ recognition.addEventListener("end", () => {
 }
 
 
-
 /* --------------- text to speech-------------------------*/
 const voiceList = document.querySelector("select");
 let screenWidth = window.screen.width;
@@ -87,15 +86,16 @@ for (let voice of speechSynthesis.getVoices()) {
 speechSynthesis.addEventListener("voiceschanged", voices);
 
 function textToSpeech(unProcessedtext) {
-var msg = new SpeechSynthesisUtterance();
-msg.text = unProcessedtext;
-for (let voice of speechSynthesis.getVoices()) {
-  if (voice.name == voiceList.value) {
-    msg.voice = voice;
+  var msg = new SpeechSynthesisUtterance();
+  msg.text = unProcessedtext;
+  for (let voice of speechSynthesis.getVoices()) {
+    if (voice.name == voiceList.value) {
+      msg.voice = voice;
+    }
   }
+  speechSynthesis.speak(msg);
 }
-speechSynthesis.speak(msg);
-}
+
 
 
 /*-------------------------making pdf from the input--------------------*/
@@ -145,14 +145,14 @@ speechToText();
 
 stopBtn.addEventListener('click', () => {
   console.log("Stopped");
-  recognition.abort();
   recognition.stop();
 });
 
 listenBtn[0].addEventListener('click', ()=>{
-recognition.abort();
-stopIt = true;
-textToSpeech(textValue.toString());
+  console.log("Speaking");
+  recognition.stop();
+  stopIt = true;
+  textToSpeech(textValue.toString());
 });
 resetBtn[0].addEventListener('click', ()=>{
 textValue = [];
