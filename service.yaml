@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: just-speak-service
+  labels:
+    app: node-app
+spec:
+  ports:
+    - name: "just-speak"
+      port: 3000
+  selector:
+    app: just-speak

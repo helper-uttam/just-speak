@@ -10,7 +10,7 @@
 - Docker, kuberneties
 - Datree
 - Firebase
-- Alan Voice assistant
+- Alan-ai
 ```javascript    
 let x = "Hello World, ";
 console.log( x + "Welcome to this Devops project");
@@ -22,6 +22,7 @@ This is a web application built using speech-recognition and various technologie
 > - If someone is not having laptop or PC, then he/she can do assignments easily with this application.
 > - If we have to prepare some big documents then they have to type all day and night to compelete the given task, but with this application we can simply complete it in no time by converting our speech to text and thus then downloading the text or pdf.
 > - If we have to send our transcript to any person then we can do that easily from one place.
+> - A person who doesn't have hands can use it to their respective jobs.
 
 ## Workflow
 This project is using `Heroku hosting service` and there are two **CI/CD pipelines** 
@@ -32,17 +33,6 @@ This project is using `Heroku hosting service` and there are two **CI/CD pipelin
 
 After the success build of CI/CD completion the PR will be ready to be merged and if the mainter will merge the PR then it is automated that after merging the PR the changes will be pushed to the dockerhub.
 And there is a pipeline to deploy the docker hub image with Heroku. So, it'll be automatically deployed after successful merging. 
-
-## For Contributors 
-- > All contributors are welcome to this repo and feel free to raise an issue.
-
-### Contributors guiude-
-* Raise an issue.
-* I'll be suggesting if anything needed to your open issue.
-* Fork or clone this repo and give it a star.
-* After forking the repo check your repositories there you can see this repo named `justSpeak` then you can make changes to that forked repo.
-* After editing the code base you can simply raise a PR.
-
 
 ### Need Assistance for running this App on your Localhost?
 After downloading this project in **ZIP format** or **cloning** using GitHub CLI.
@@ -56,6 +46,7 @@ After downloading this project in **ZIP format** or **cloning** using GitHub CLI
 ### Need Assistance for running this App on your Localhost using Docker🐳? 
 > First you have to pull the image from my **Docker Hub** <a href="https://hub.docker.com/repository/docker/codingnightmare/just-speak">registry</a>. 
 > Then do the same steps as you do to run docker image.
+If you want to run it in one line code then here we go, just copy paste this code 
 ```
 docker run -d -p 3000:3000 codingnightmare/just-speak:v1
 ```
