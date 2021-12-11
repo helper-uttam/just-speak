@@ -19,7 +19,7 @@ jobs:
         run: curl https://get.datree.io | /bin/bash
 
       - name: Test with DaTree
-        run: datree test ./deployment/*.yaml
+        run: datree test ./*.yaml
         env: 
           DATREE_TOKEN: ${{ secrets.DATREE_TOKEN }}
 
