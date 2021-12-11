@@ -76,9 +76,14 @@ https.get(url, res => {
   });
   
 };
-let index = path.join(__dirname, '/', './public', 'success.html' );
-fetchData();
-res.sendFile(index);
+if(req.body.email.toString() < 7 || req.body.email.toString().includes != '@'){
+  let notFound = path.join(__dirname, '/', './public', 'notFound.html' );
+  res.sendFile(notFound);
+}else{
+  let successFile = path.join(__dirname, '/', './public', 'success.html' );
+  fetchData();
+  res.sendFile(successFile);
+}
 });
 
 
