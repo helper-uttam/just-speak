@@ -21,7 +21,6 @@ app.get("/", (req, res)=>{
 
 const send1 = (usermail, title, body) => {
   const SECRET_KEY = `${process.env.SENDGRID_API_KEY}`;
-  console.log(SECRET_KEY);
   sgMail.setApiKey(SECRET_KEY);
   const mail = String(process.env.MAIL);
   try {
