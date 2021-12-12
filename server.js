@@ -27,8 +27,7 @@ const send1 = (usermail, title, body) => {
     to: usermail,
     from: mail, 
     subject: title,
-    text: body,
-    html: '<strong>Thankyou for showing intrest in our website</strong>',
+    html: `<strong>${body}</strong>`,
   };
   sgMail
   .send(msg)

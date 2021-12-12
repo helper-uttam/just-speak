@@ -1,22 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  annotations:
-    kubernetes.io/ingress.class: traefik
+  name: test-app-ingress
   labels:
-    app: just-speak
-  name: just-speak-ingress
+    name: test-app-ingress
 spec:
   rules:
-    - host: just-speak.be63186e-e68d-4bd7-8a48-05ffdd90103d.k8s.civo.com
-      http:
-        paths:
-          -
-            backend:
-              service:
-                name: just-speak
-                port:
-                  number: 3000
-            path: /
-            pathType: "Prefix"
-            
+  - host: test-app.aab87c9c-e6e1-4ecd-b7cb-65fedcd51ae7.k8s.civo.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: test-app-svc
+            port: 
+              number: 3000
