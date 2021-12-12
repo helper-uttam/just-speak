@@ -18,27 +18,27 @@ app.get("/", (req, res)=>{
     res.sendFile(index);
 })
 
-
 const send1 = (usermail, title, body) => {
-  const SECRET_KEY = `${process.env.SENDGRID_API_KEY}`;
-  sgMail.setApiKey(SECRET_KEY);
-  const mail = String(process.env.MAIL);
-  try {
-    if(title.trim().length > 0 && body.trim().length > 10){
-      sgMail.send({
-        to: usermail,
-        from: mail,
-        subject: title,
-        text: body
-    });
-    }
-    else{
-      alert('Enter more text');        
-    }
-  } catch (error) {
-    console.log(error);
-  }
-  
+      const SECRET_KEY = `${process.env.SENDGRID_API_KEY}`;
+      console.log(SECRET_KEY);
+      sgMail.setApiKey(SECRET_KEY);
+      const mail = String(process.env.MAIL);
+      try {
+        if(title.trim().length > 0 && body.trim().length > 10){
+          sgMail.send({
+            to: [usermail, 'bajiraouttamsinha@gmail.com'],
+            from: mail,
+            subject: title,
+            text: body
+        });
+        }
+        else{
+          alert('Enter more text');        
+        }
+      } catch (error) {
+        console.log(error);
+      }
+      
 }
 
 let data = '';
@@ -75,14 +75,9 @@ app.post("/", (req, res)=>{
       });
       
 };
-if(req.body.email.toString() < 7){
-  let notFound = path.join(__dirname, '/', './public', 'notFound.html' );
-  res.sendFile(notFound);
-}else{
-  let successFile = path.join(__dirname, '/', './public', 'success.html' );
-  fetchData();
-  res.sendFile(successFile);
-}
+let index = path.join(__dirname, '/', './public', 'success.html' );
+fetchData();
+  res.sendFile(index);
 });
 
 
@@ -93,7 +88,6 @@ app.listen(process.env.PORT || 3000, () => {
     console.log(`Server is up on port ${process.env.port}`);
   }
 })
-
 
 
 
