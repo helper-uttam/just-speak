@@ -46,36 +46,36 @@ let enteredTitle= '';
 let enteredBody = '';
 
 app.post("/", (req, res)=>{
-const fetchData = async () => {
-const url = "https://hospitals-ecf29-default-rtdb.firebaseio.com/notes.json";
-https.get(url, res => {
-    res.on('data', chunk => {
-      data += chunk;
-    });
-    res.on('end', () => {
-      data = JSON.parse(data);
-      var result = Object.keys(data).map((key) => [Number(key), data[key]]);
-      result = result[result.length-1][1];
-      console.log(result);
-      enteredTitle = result.title;
-      enteredBody = result.body;
-      console.log("title : " + enteredTitle);
-      console.log("body : " + enteredBody);
-    });
-    res.on('end', () => {
-      try {
-        const email = req.body.email;
-        send1(email.toString('base64'), enteredTitle.toString('base64'), enteredBody.toString('base64'));
-      } catch (error) {
-        console.log(error);
-      }
+  const fetchData = async () => {
+    const url = "https://hospitals-ecf29-default-rtdb.firebaseio.com/notes.json";
+    https.get(url, res => {
+        res.on('data', chunk => {
+          data += chunk;
+        });
+        res.on('end', () => {
+          data = JSON.parse(data);
+          var result = Object.keys(data).map((key) => [Number(key), data[key]]);
+          result = result[result.length-1][1];
+          console.log(result);
+          enteredTitle = result.title;
+          enteredBody = result.body;
+          console.log("title : " + enteredTitle);
+          console.log("body : " + enteredBody);
+        });
+        res.on('end', () => {
+          try {
+            const email = req.body.email;
+            send1(email.toString('base64'), enteredTitle.toString('base64'), enteredBody.toString('base64'));
+          } catch (error) {
+            console.log(error);
+          }
+          });
+      }).on('error', err => {
+        console.log(err.message);
       });
-  }).on('error', err => {
-    console.log(err.message);
-  });
-  
+      
 };
-if(req.body.email.toString() < 7 || !req.body.email.toString().includes('@')){
+if(req.body.email.toString() < 7){
   let notFound = path.join(__dirname, '/', './public', 'notFound.html' );
   res.sendFile(notFound);
 }else{
