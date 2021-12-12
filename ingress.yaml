@@ -8,7 +8,7 @@ metadata:
   name: just-speak-ingress
 spec:
   rules:
-    - host: just-speak.7fe18cde-3f87-441e-afd7-0d531995ed3d.k8s.civo.com
+    - host: just-speak.be63186e-e68d-4bd7-8a48-05ffdd90103d.k8s.civo.com
       http:
         paths:
           -
@@ -19,3 +19,4 @@ spec:
                   number: 3000
             path: /
             pathType: "Prefix"
+            
