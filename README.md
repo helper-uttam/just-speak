@@ -11,6 +11,8 @@
 - Datree
 - Firebase
 - Alan-ai
+- CIVO
+- heroku
 ```javascript    
 let x = "Hello World, ";
 console.log( x + "Welcome to this Devops project");
