@@ -75,7 +75,7 @@ https.get(url, res => {
   });
   
 };
-if(req.body.email.toString() < 7 ){
+if(req.body.email.toString() < 7 || !req.body.email.toString().includes('@')){
   let notFound = path.join(__dirname, '/', './public', 'notFound.html' );
   res.sendFile(notFound);
 }else{
