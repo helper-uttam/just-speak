@@ -1,14 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: just-speak-service
-  labels:
-    app: node-app
+  name: test-app-svc
 spec:
-   ports:
-    - protocol: TCP
-      port: 3000
-      targetPort: 3000
   selector:
-    app: just-speak
-  type: LoadBalancer
+    app: test-app-1
+  ports:
+  - port: 3000
+    targetPort: 3000
+  type: ClusterIP  
