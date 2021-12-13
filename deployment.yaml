@@ -1,22 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-app-1
+  name: just-speak-deployment
 spec:
   selector:
     matchLabels:
-      app: test-app-1
+    app: just-speak
+  replicas: 3
   template:
     metadata:
       labels:
-        app: test-app-1
+        app: just-speak
     spec:
       containers:
-      - name: test-app-1
-        image: codingnightmare/just-speak:v1
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+      - name: just-speak
+        image: "codingnightmare/just-speak:v1"
         ports:
         - containerPort: 3000
